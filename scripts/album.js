@@ -13,7 +13,6 @@ var albumPicasso = {
         { title: 'Magenta', duration: '2:15'}
     ]
 };
-
 // Another Example Album
 var albumMarconi = {
     title: 'The Telephone',
@@ -29,6 +28,28 @@ var albumMarconi = {
         { title: 'Wrong phone number', duration: '2:15'}
     ]
 };
+//checkpoint 11 submission
+var albumPetty = {
+    title:  'Full Moon Fever',
+    artist: 'Tom Petty and the Heartbreakers',
+    label:  'MCA Records',
+    year:   '1989',
+    albumArtUrl:  'assets/images/album_covers/Tom_Petty_Album_Cover.jpg',
+    songs:  [
+        { title: 'Free Fallin', duration: '4:16'},
+        { title: 'I Wont Back Down', duration: '2:57'},
+        { title: 'Love is a Long Road', duration: '4:08'},
+        { title: 'A Face in the Crowd', duration: '3:59'},
+        { title: 'Runnin Down a Dream', duration: '4:52'},
+        { title: 'Fell a Whole Lot Better', duration: '2:50'},
+        { title: 'Yer So Bad', duration: '3:06'},
+        { title: 'Depending on You', duration: '2:49'},
+        { title: 'The Apartment Song', duration: '2:33'},
+        { title: 'Alright for Now', duration: '2:01'},
+        { title: 'A Mind With a Heart of Its Own', duration: '3:31'},
+        { title: 'Zombie Zoo', duration: '2:59'}
+    ]
+};
 
 var createSongRow = function(songNumber, songName, songLength) {
     var template =
@@ -42,16 +63,14 @@ var createSongRow = function(songNumber, songName, songLength) {
     return template;
 };
 
-var setCurrentAlbum = function(album) {
-    // #1
-    var albumTitle = document.getElementsByClassName('album-view-title')[0];
-    var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-    var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-    var albumImage = document.getElementsByClassName('album-cover-art')[0];
-    var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
-    // #2
-    albumTitle.firstChild.nodeValue = album.title;
+var setCurrentAlbum = function(album) {
+    albumTitle.firstChild.nodeValue = album.name;
     albumArtist.firstChild.nodeValue = album.artist;
     albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
     albumImage.setAttribute('src', album.albumArtUrl);
@@ -67,4 +86,14 @@ var setCurrentAlbum = function(album) {
 
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
+
+    var albums = [albumPicasso, albumMarconi, albumPetty];
+    var index = 1;
+    albumImage.addEventListener("click", function(event){
+        setCurrentAlbum(albums[index]);
+        index++;
+        if (index == album.length) {
+          index = 0;
+        }
+    });
 };
