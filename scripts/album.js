@@ -87,10 +87,20 @@ var setCurrentAlbum = function(album) {
 var findParentByClassName = function(element, targetClass) {
     if (element) {
         var currentParent = element.parentElement;
+<<<<<<< HEAD
         //If there is not parent of the element, then will print, "No Parent Found."
         if (!currentParent) {
           console.log("No parent found!");
         //If there is a parent but not with that class name then the console will print, "No parent with that class name."
+=======
+        //If there is no parent of the element, then will print, "No Parent Found."
+        if (!currentParent) {
+          console.log("No parent found.");
+          //If there is a parent but not with the target class name then the console will print, "No parent with that class name."
+        }
+        if (currentParent.className !== targetClass){
+          console.log("No parent found with that class name.");
+>>>>>>> checkpoint13_DOMScripting
         }
         if ()
         while (currentParent.className !== targetClass && currentParent.className !== null) {
@@ -98,10 +108,13 @@ var findParentByClassName = function(element, targetClass) {
         }
         return currentParent;
     }
+<<<<<<< HEAD
 
     else{
         console.log("No parent found with that class name.")
     }
+=======
+>>>>>>> checkpoint13_DOMScripting
 };
 
 var getSongItem = function(element) {
