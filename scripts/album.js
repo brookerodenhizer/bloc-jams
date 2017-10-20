@@ -90,14 +90,13 @@ var findParentByClassName = function(element, targetClass) {
         if (!currentParent) {
           console.log("No parent found!");
         }
-        if ()
         while (currentParent.className !== targetClass && currentParent.className !== null) {
             currentParent = currentParent.parentElement;
         }
+        return currentParent;
         if (currentParent.className !== targetClass){
           console.log("No parent found with that class name.");
         }
-        return currentParent;
     }
 
 var getSongItem = function(element) {
@@ -182,4 +181,4 @@ songListContainer.addEventListener('mouseover', function(event) {
           index = 0;
         }
     });
-};
+}
