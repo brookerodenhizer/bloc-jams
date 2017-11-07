@@ -14,13 +14,16 @@ var buildCollectionItemTemplate = function() {
   + '  </div>'
   + '</div>'
   ;
-  return $(template);
-};
-    $(window).load(function() {
+
+      // #2
+      return $(template);
+  };
+
+ $(window).load(function() {
         // #1
-        var $collectionContainer = $('.album-covers');
+     var $collectionContainer = $('.album-covers');
         // #2
-        $collectionContainer.empty();
+     $collectionContainer.empty();
 
         // #3
         for (var i = 0; i < 12; i++) {
@@ -28,5 +31,5 @@ var buildCollectionItemTemplate = function() {
           // #5
           $collectionContainer.append($newThumbnail);
         }
-      
+
     });
