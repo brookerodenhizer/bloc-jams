@@ -62,23 +62,6 @@ var createSongRow = function(songNumber, songName, songLength) {
 
      var $row = $(template);
 
-<<<<<<< HEAD
-     var onHover = function(event) {
-    // Placeholder for function logic
-      };
-     var offHover = function(event) {
-    // Placeholder for function logic
-      };
-
-     // #1
-     $row.find('.song-item-number').click(clickHandler);
-     // #2
-     $row.hover(onHover, offHover);
-     // #3
-     return $row;
-};
-
-=======
 
      var clickHandler = function() {
      	var songNumber = $(this).attr('data-song-number');
@@ -125,7 +108,6 @@ var createSongRow = function(songNumber, songName, songLength) {
      return $row;
 };
 
->>>>>>> checkpoint_18
 var $albumImage = $('.album-cover-art');
 
 var setCurrentAlbum = function(album) {
@@ -170,4 +152,3 @@ var currentlyPlayingSong = null;
         index = 0;
       }
     }
-}
