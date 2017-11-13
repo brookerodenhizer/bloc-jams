@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
  var animatePoints = function() {
-=======
+
 var animatePoints = function() {
->>>>>>> checkpoint_18
+
    var revealPoint = function() {
        // #7
        $(this).css({
@@ -24,4 +24,3 @@ var animatePoints = function() {
            animatePoints();
          }
   });
- });
