@@ -159,7 +159,7 @@ var $nextButton = $('.main-controls .next');
     var index = 1;
       $albumImage.click(doThisOnClick);
 
-    function doThisOnClick(event) {
+    function doThisOnClick(event){
       setCurrentAlbum(albums[index]);
       index++;
       if (index == albums.length) {
