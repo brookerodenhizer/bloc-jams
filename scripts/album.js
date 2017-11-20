@@ -171,3 +171,4 @@ var $nextButton = $('.main-controls .next');
         index = 0;
       }
     }
+  }
