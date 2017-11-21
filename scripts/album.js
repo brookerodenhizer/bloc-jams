@@ -102,9 +102,11 @@ var nextSong = function() {
         currentSongIndex = 0;
     }
 
+
   var lastSongNumber = currentlyPlayingSongNumber;
   currentlyPlayingSongNumber = currentSongIndex + 1;
   currentSongFromAlbum = currentAlbum.songs[currentSongIndex];
+}
 
   var previousSong = function() {
       var currentSongIndex = trackIndex(currentAlbum, currentSongFromAlbum);
@@ -162,7 +164,7 @@ var $nextButton = $('.main-controls .next');
   });
     var albums = [albumPicasso, albumMarconi, albumPetty];
     var index = 1;
-      $albumImage.click(doThisOnClick);
+    $albumImage.click(doThisOnClick);
 
     function doThisOnClick(event){
       setCurrentAlbum(albums[index]);
@@ -171,4 +173,3 @@ var $nextButton = $('.main-controls .next');
         index = 0;
       }
     }
-  }
