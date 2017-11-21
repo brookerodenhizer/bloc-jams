@@ -103,10 +103,12 @@ var nextSong = function() {
     }
 
 
+
   var lastSongNumber = currentlyPlayingSongNumber;
   currentlyPlayingSongNumber = currentSongIndex + 1;
   currentSongFromAlbum = currentAlbum.songs[currentSongIndex];
 }
+
 
   var previousSong = function() {
       var currentSongIndex = trackIndex(currentAlbum, currentSongFromAlbum);
