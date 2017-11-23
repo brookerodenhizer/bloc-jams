@@ -53,7 +53,7 @@ var createSongRow = function(songNumber, songName, songLength) {
          var songNumber = songNumberCell.attr('data-song-number');
 
          if (songNumber !== currentlyPlayingSongNumber) {
-             songNumberCell.html(songNumber);
+             songNumberCell.html(pauseButtonTemplate);
          }
          console.log("songNumber type is " + typeof songNumber + "\n and currentlyPlayingSongNumber type is " + typeof currentlyPlayingSongNumber);
      };
