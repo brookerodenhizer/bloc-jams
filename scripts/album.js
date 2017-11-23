@@ -30,6 +30,7 @@ var createSongRow = function(songNumber, songName, songLength) {
      		// Switch from Play -> Pause button to indicate new song is playing.
      		$(this).html(pauseButtonTemplate);
      		setSong(songNumber);
+        updatePlayerSongBar();
      	} else if (currentlyPlayingSongNumber === songNumber) {
      		// Switch from Pause -> Play button to pause currently playing song.
      		$(this).html(playButtonTemplate);
@@ -53,7 +54,7 @@ var createSongRow = function(songNumber, songName, songLength) {
          var songNumber = songNumberCell.attr('data-song-number');
 
          if (songNumber !== currentlyPlayingSongNumber) {
-             songNumberCell.html(pauseButtonTemplate);
+             songNumberCell.html(songNumber);
          }
          console.log("songNumber type is " + typeof songNumber + "\n and currentlyPlayingSongNumber type is " + typeof currentlyPlayingSongNumber);
      };
