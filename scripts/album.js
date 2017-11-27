@@ -191,7 +191,22 @@ var $nextButton = $('.main-controls .next');
     setCurrentAlbum(albumPicasso);
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
+    $('.main-controls .play-pause').click(togglePlayFromPlayerBar());
   });
+
+function togglePlayFromPlayerBar(){
+  if (currentlyPlayingSongNumber === songNumber) {
+    if (currentSoundFile.isPaused()) {
+      $(this).html(pauseButtonTemplate);
+      $('.main-controls .play-pause').html(playerBarPlayButton);
+      currentSoundFile.play();
+    } else {
+      $(this).html(playButtonTemplate);
+      $('.main-controls .play-pause').html(playerBarPlayButton);
+      currentSoundFile.pause();
+    }
+  }
+}
     var albums = [albumPicasso, albumMarconi, albumPetty];
     var index = 1;
     $albumImage.click(doThisOnClick);
