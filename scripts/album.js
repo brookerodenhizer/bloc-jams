@@ -28,8 +28,9 @@ var createSongRow = function(songNumber, songName, songLength) {
      	}
      	if (currentlyPlayingSongNumber !== songNumber) {
      		// Switch from Play -> Pause button to indicate new song is playing.
-     		$(this).html(pauseButtonTemplate);
-     		setSong(songNumber);
+        setSong(songNumber);
+        $(this).html(pauseButtonTemplate);
+
      	} else if (currentlyPlayingSongNumber === songNumber) {
      		// Switch from Pause -> Play button to pause currently playing song.
      		$(this).html(playButtonTemplate);
