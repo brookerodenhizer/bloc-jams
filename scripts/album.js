@@ -195,9 +195,8 @@ var $nextButton = $('.main-controls .next');
   });
 
 function togglePlayFromPlayerBar(){
-  var songNumber = parseInt($(this).attr('data-song-number'));
+  setSong(1);
   if (currentlyPlayingSongNumber === songNumber) {
-    setSong(songNumber);
     if (currentSoundFile.isPaused()) {
       $(this).html(pauseButtonTemplate);
       $('.main-controls .play-pause').html(playerBarPlayButton);
