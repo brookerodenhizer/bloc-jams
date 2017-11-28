@@ -205,6 +205,12 @@ var $nextButton = $('.main-controls .next');
 
 function togglePlayFromPlayerBar(){
   /*if (currentlyPlayingSongNumber === songNumber) {
+    $('.main-controls .play-pause').click(togglePlayFromPlayerBar());
+  });
+
+function togglePlayFromPlayerBar(){
+  setSong(1);
+  if (currentlyPlayingSongNumber === songNumber) {
     if (currentSoundFile.isPaused()) {
       $(this).html(pauseButtonTemplate);
       $('.main-controls .play-pause').html(playerBarPlayButton);
@@ -226,8 +232,6 @@ function togglePlayFromPlayerBar(){
        currentSoundFile.pause();
     }
 }
-
-
     var albums = [albumPicasso, albumMarconi, albumPetty];
     var index = 1;
     $albumImage.click(doThisOnClick);
