@@ -47,6 +47,8 @@ var createSongRow = function(songNumber, songName, songLength) {
      		// Switch from Play -> Pause button to indicate new song is playing.
         $(this).html(pauseButtonTemplate);
         setSong(songNumber);
+        updatePlayerBarSong();
+        currentSoundFile.play();
      	} else if (currentlyPlayingSongNumber === songNumber) {
            if (currentSoundFile.isPaused()) {
                $(this).html(pauseButtonTemplate);
@@ -198,12 +200,11 @@ var $nextButton = $('.main-controls .next');
     setCurrentAlbum(albumPicasso);
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
-    $('.main-controls .play-pause').click(togglePlayFromPlayerBar());
+    $('.main-controls .play-pause').click(togglePlayFromPlayerBar);
   });
 
 function togglePlayFromPlayerBar(){
-  setSong(1);
-  if (currentlyPlayingSongNumber === songNumber) {
+  /*if (currentlyPlayingSongNumber === songNumber) {
     if (currentSoundFile.isPaused()) {
       $(this).html(pauseButtonTemplate);
       $('.main-controls .play-pause').html(playerBarPlayButton);
@@ -213,8 +214,20 @@ function togglePlayFromPlayerBar(){
       $('.main-controls .play-pause').html(playerBarPlayButton);
       currentSoundFile.pause();
     }
-  }
+  }*/
+    var $currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSongNumber + '"]');
+    if (currentSoundFile.isPaused()){
+       $currentlyPlayingCell.html(pauseButtonTemplate);
+       $(this).html(playerBarPauseButton);
+       currentSoundFile.play();
+    } else if (currentSoundFile) {
+       $currentlyPlayingCell.html(playButtonTemplate);
+       $(this).html(playerBarPlayButton);
+       currentSoundFile.pause();
+    }
 }
+
+
     var albums = [albumPicasso, albumMarconi, albumPetty];
     var index = 1;
     $albumImage.click(doThisOnClick);
