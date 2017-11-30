@@ -134,8 +134,9 @@ var updateSeekBarWhileSongPlays = function() {
             // #11
             var seekBarFillRatio = this.getTime() / this.getDuration();
             var $seekBar = $('.seek-control .seek-bar');
-
+            setCurrentTimeInPlayerBar(this.getTime());
             updateSeekPercentage($seekBar, seekBarFillRatio);
+            //setCurrentTimeInPlayerBar();
         });
     }
 };
@@ -284,6 +285,41 @@ var $nextButton = $('.main-controls .next');
     var albums = [albumPicasso, albumMarconi, albumPetty];
     var index = 1;
     $albumImage.click(doThisOnClick);
+
+    function togglePlayFromPlayerBar(){
+      /*if (currentlyPlayingSongNumber === songNumber) {
+        $('.main-controls .play-pause').click(togglePlayFromPlayerBar());
+      });
+
+    function togglePlayFromPlayerBar(){
+      setSong(1);
+      if (currentlyPlayingSongNumber === songNumber) {
+        if (currentSoundFile.isPaused()) {
+          $(this).html(pauseButtonTemplate);
+          $('.main-controls .play-pause').html(playerBarPlayButton);
+          currentSoundFile.play();
+        } else {
+          $(this).html(playButtonTemplate);
+          $('.main-controls .play-pause').html(playerBarPlayButton);
+          currentSoundFile.pause();
+        }
+      }*/
+
+function setCurrentTimeInPlayerBar(currentTime) {
+    //set the text of the element with the class .current-time to the current time in the song.
+    $('.current-time').html(filterTimeCode(currentTime));
+
+}
+
+function filterTimeCode(timeInSeconds) {
+  var sec = parseFloat( % 60 );
+  var min = floor(currentTIme / 60);
+  return min + ":" + sec;
+
+}
+function setTotalTimeInPlayerBar (totalTime) {
+
+}
 
     function doThisOnClick(event){
       setCurrentAlbum(albums[index]);
