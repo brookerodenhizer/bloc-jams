@@ -308,17 +308,15 @@ var $nextButton = $('.main-controls .next');
 function setCurrentTimeInPlayerBar(currentTime) {
     //set the text of the element with the class .current-time to the current time in the song.
     $('.current-time').html(filterTimeCode(currentTime));
-
 }
 
 function filterTimeCode(timeInSeconds) {
-  var sec = parseFloat( % 60 );
+  var sec = parseFloat( timeInSeconds%60 );
   var min = floor(currentTIme / 60);
   return min + ":" + sec;
-
 }
 function setTotalTimeInPlayerBar (totalTime) {
-
+    $('.total-time').html(currentSoundFile.duration);
 }
 
     function doThisOnClick(event){
