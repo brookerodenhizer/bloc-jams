@@ -286,7 +286,7 @@ var $nextButton = $('.main-controls .next');
     var index = 1;
     $albumImage.click(doThisOnClick);
 
-    function togglePlayFromPlayerBar(){
+    //function togglePlayFromPlayerBar(){}
       /*if (currentlyPlayingSongNumber === songNumber) {
         $('.main-controls .play-pause').click(togglePlayFromPlayerBar());
       });
