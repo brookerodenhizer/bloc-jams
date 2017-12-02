@@ -286,7 +286,12 @@ var $nextButton = $('.main-controls .next');
     var index = 1;
     $albumImage.click(doThisOnClick);
 
+<<<<<<< Updated upstream
     //function togglePlayFromPlayerBar(){}
+=======
+    function togglePlayFromPlayerBar(){
+    }
+>>>>>>> Stashed changes
       /*if (currentlyPlayingSongNumber === songNumber) {
         $('.main-controls .play-pause').click(togglePlayFromPlayerBar());
       });
